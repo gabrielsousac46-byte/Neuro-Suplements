@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -300,7 +299,7 @@
           <input type="password" id="loginSenha" placeholder="••••••••" />
         </div>
         <a href="#" class="forgot">Esqueci minha senha</a>
-        <button class="btn-main" onclick="fazerLogin()">ENTRAR NA LOJA</button>
+        <button class="btn-main" onclick="fazerLogin()">ENTRAR NA PAGINA</button>
         <div class="divider">ou</div>
         <div style="text-align:center; font-size:13px; color:var(--muted)">
           Não tem conta?
@@ -349,7 +348,7 @@
         <div class="sucesso-icone">💪</div>
         <h2 id="sucessoTitulo">TUDO CERTO!</h2>
         <p id="sucessoTexto">Redirecionando para a loja...</p>
-        <button class="btn-main" onclick="irParaLoja()">IR PARA A LOJA</button>
+        <button class="btn-main" onclick="irParaPagina()">IR PARA A PAGINA</button>
       </div>
 
     </div>
@@ -364,7 +363,7 @@
     }
 
     window.addEventListener('load', () => {
-      if (localStorage.getItem('neuroforce_logado')) irParaLoja();
+      if (localStorage.getItem('neuroforce_logado')) irParaPagina();
     });
 
     function mudarAba(aba) {
@@ -416,8 +415,8 @@
       document.getElementById('formLogin').style.display = 'none';
       document.getElementById('painelSucesso').style.display = 'block';
       document.getElementById('sucessoTitulo').textContent = 'OLÁ, ' + user.nome.split(' ')[0].toUpperCase() + '!';
-      document.getElementById('sucessoTexto').textContent = 'Login realizado! Entrando na Index...';
-      setTimeout(irParaIndex, 1800);
+      document.getElementById('sucessoTexto').textContent = 'Login realizado! Entrando na pagina...';
+      setTimeout(irParaPagina, 1800);
     }
 
     function fazerCadastro() {
@@ -439,11 +438,11 @@
       document.getElementById('formCadastro').style.display = 'none';
       document.getElementById('painelSucesso').style.display = 'block';
       document.getElementById('sucessoTitulo').textContent = 'CONTA CRIADA!';
-      document.getElementById('sucessoTexto').textContent = 'Bem-vindo(a), ' + nome.split(' ')[0] + '! Entrando na Index...';
-      setTimeout(irParaIndex, 1800);
+      document.getElementById('sucessoTexto').textContent = 'Bem-vindo(a), ' + nome.split(' ')[0] + '! Entrando na pagina...';
+      setTimeout(irParaPagina, 1800);
     }
 
-    function irParaIndex() { window.location.href = 'index.html'; }
+    function irParaPagina() { window.location.href = 'pagina.html'; }
 
     document.addEventListener('keydown', e => {
       if (e.key !== 'Enter') return;
@@ -464,3 +463,4 @@
 
   
 </html>
+
